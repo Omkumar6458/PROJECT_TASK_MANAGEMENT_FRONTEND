@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #0B0F1A;          /* Deep SaaS black */
+  --bg-surface: #12172A;       /* Card surface */
+  
+  --primary: #7C3AED;          /* Purple */
+  --primary-hover: #6D28D9;
+  --secondary: #6366F1;        /* Indigo */
+
+  --text-main: #F9FAFB;
+  --text-muted: #9CA3AF;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #111827, var(--bg-deep));
+  color: var(--text-main);
+  @apply antialiased;
+}
+
+@layer components {
+  /* Main Page Container */
+  .dashboard-container {
+  @apply min-h-screen p-6 lg:p-10;
+  background: linear-gradient(180deg, #0B0F1A 0%, #0E1325 100%);
+}
+
+
+
+
+
+
+
+
+  /* ============================= */
+  /* Form Labels */
+  /* ============================= */
+  .form-label {
+    @apply block mb-2 text-sm font-bold tracking-wide text-slate-300;
+  }
+
+  /* ============================= */
+  /* Form Inputs (Dark Mode) */
+  /* ============================= */
+  .input-field,
+  .form-input-dark {
+    @apply w-full bg-[#1E293B] border border-slate-700 rounded-xl px-4 py-3
+           text-white placeholder-slate-500 outline-none transition-all
+           focus:border-[#FF9933] focus:ring-1 focus:ring-[#FF9933]/40;
+  }
+
+  /* Fix for SELECT background */
+  select.input-field,
+  select.form-input-dark {
+    @apply appearance-none bg-[#1E293B];
+  }
+
+  /* ============================= */
+  /* Error Text */
+  /* ============================= */
+  .error-text {
+    @apply mt-1 text-xs font-semibold text-red-400;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+.clean-card {
+  @apply bg-[rgba(18,23,42,0.85)]
+         border border-white/10
+         backdrop-blur-xl
+         rounded-2xl
+         shadow-[0_0_40px_rgba(124,58,237,0.15)]
+         transition-all duration-300;
+}
+
+.clean-card:hover {
+  @apply border-white/20 shadow-[0_0_60px_rgba(124,58,237,0.25)];
+}
+
+
+
+
+
+
+  /* Buttons */
+.btn-primary {
+  @apply px-6 py-3
+         rounded-full
+         text-white font-semibold
+         bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-500
+         shadow-[0_0_30px_rgba(124,58,237,0.5)]
+         transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply scale-105 shadow-[0_0_50px_rgba(124,58,237,0.7)];
+}
+
+
+ .btn-secondary {
+  @apply px-6 py-3
+         bg-[#12172A]
+         border border-white/10
+         text-slate-300
+         rounded-xl font-semibold
+         transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply border-white/20 text-white;
+}
+
+
+  /* Status Badges for Dark Mode */
+  .badge {
+    @apply px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider border;
+  }
+  .badge-todo { @apply bg-blue-500/10 text-blue-400 border-blue-500/20; }
+  .badge-in-progress { @apply bg-orange-500/10 text-[#FF9933] border-orange-500/20; }
+  .badge-done { @apply bg-green-500/10 text-green-400 border-green-500/20; }
+
+  /* Gradient Text */
+
+  .gradient-text {
+  @apply bg-gradient-to-r from-purple-400 via-purple-500 to-indigo-400
+         bg-clip-text text-transparent;
+}
+
+
+  /* ... existing badges ... */
+  
+  /* Priority Badges */
+  .badge-low { @apply bg-slate-500/10 text-slate-400 border-slate-500/20; }
+  .badge-medium { @apply bg-yellow-500/10 text-yellow-400 border-yellow-500/20; }
+  .badge-high { @apply bg-red-500/10 text-red-400 border-red-500/20; }
+
+
+  /* Dark Mode Form Inputs */
+  .form-input-dark {
+    @apply w-full bg-[#1E293B] border border-slate-700 rounded-xl px-4 py-3 
+           text-white placeholder-slate-500 outline-none transition-all
+           focus:border-[#FF9933] focus:ring-1 focus:ring-[#FF9933]/50;
+  }
+
+  /* Create a custom input class for dark mode */
+.form-input-dark {
+  @apply w-full bg-[#12172A]
+         border border-white/10
+         rounded-xl px-4 py-3
+         text-white placeholder-slate-500
+         outline-none transition-all
+         focus:border-[var(--primary)]
+         focus:ring-1
+         focus:ring-[rgba(124,58,237,0.5)];
+}
+
+
+  /* Specific fix for select dropdowns to ensure they aren't white */
+  select.form-input-dark {
+    @apply appearance-none bg-[#1E293B];
+  }
+
+
+}
+
